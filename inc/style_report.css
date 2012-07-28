@@ -1,0 +1,216 @@
+html, body, table, td {
+	font-family: Tahoma, Verdana, Helvetica, sans-serif;
+	font-size:11px;
+}
+form {
+	margin:0px;
+}
+/*************** Bordered ****************/
+#b1 {
+	border:1px solid #989795;
+}
+#b1 thead tr{
+	background-color: #E2E2E2;
+    background-repeat: repeat-x;
+	height:20px;
+	font-weight:bold;
+}
+#b1 thead td {
+	border:none;
+}
+#b1 tbody td {
+	border-bottom:1px solid #989795;
+	/*border-bottom:1px dashed #989795;*/
+	/*background-color:#f5f5f5;*/
+}
+#b1 tbody .odd_row {
+	background-color:#ffffff;
+}
+#b1 tbody .even_row {
+	background-color:#f5f5f5;	
+}
+#b1 tbody .foot {
+	border:none;
+}
+#b1 tfoot td{
+	height:1px;
+	border-bottom:none;
+}
+
+/************** non-bordered **************/
+#b2 {
+	border:1px solid #989795;
+}
+#b2 thead tr{
+	background-image: url(../img/skins/formcaption.gif);
+	background-repeat: repeat-x;
+	height:20px;
+	font-weight:bold;
+}
+#b2 thead td {
+	border:none;
+}
+#b2 tbody td {
+	background-color:#f5f5f5;
+}
+#b2 tbody .foot {
+	border:none;
+}
+#b2 tfoot td{
+	height:1px;
+	border-bottom:none;
+}
+
+/************************************/
+
+/***********Report*********/
+#sectionReportTitle {
+	color:#000000;
+	padding:3px;
+	margin-bottom:12px;
+	font-size:12px;
+	font-weight:bold;
+}
+#b3 {
+	border:1px solid #989795;
+}
+#b3 thead tr{
+	height:20px;
+	font-weight:bold;
+}
+#b3 thead td {
+	background-color: #dcdcdc;
+	border-bottom:1px solid #989795;
+}
+#b3 tbody td {
+	border-bottom:1px solid #dcdcdc;
+	/*background-color:#f5f5f5;*/
+}
+#b3 tbody .odd_row {
+	background-color:#ffffff;
+}
+#b3 tbody .even_row {
+	background-color:#f5f5f5;
+}
+#b3 tbody .foot {
+	border:none;
+}
+#b3 tfoot td{
+	height:1px;
+	border-bottom:none;
+}
+/**************************/
+
+.button {
+	font-weight:bold;
+	font-family: Tahoma, Verdana, Sans-serif;
+	font-size: 11px;
+	background-image:url(../img/skins/button.gif);
+	padding:2px 2px 2px 2px;
+	border:1px solid #eeeeee;
+	cursor:hand;
+	color:#000000;
+}
+input, select, textarea {
+	font-family: Arial, Verdana, Sans-serif;
+	font-size: 12px;
+	border-top:1px solid #999999;
+	border-left:1px solid #999999;
+	border-right:1px solid #dddddd;
+	border-bottom:1px solid #dddddd;
+}
+input.formstyle{
+	border-top:0;
+	border-left:0;
+	border-right:0;
+	border-bottom:1px solid #000000;
+	font-family: Verdana;
+	font-size: 12px;		
+}
+input.formstyle_dotted{
+	border-top:0;
+	border-left:0;
+	border-right:0;
+	border-bottom:1px dotted #000000;
+	font-family: Verdana;
+	font-size: 12px;		
+}
+input.noborder{
+	border-top:0;
+	border-left:0;
+	border-right:0;
+	border-bottom:0;
+	font-family: Verdana;
+	font-size: 12px;		
+}
+input.login{
+	border-top:0;
+	border-left:0;
+	border-right:0;
+	border-bottom:0;
+	font-family: Verdana;
+	font-size: 12px;
+	 background:transparent;
+}
+input.disabled {
+	background-color:#e5e2e0;
+}
+textarea.disabled {
+	background-color:#e5e2e0;
+}
+input.checkbox {
+	border:none;
+}
+input.radio{
+	border:none;
+}
+input.roTextField {
+	background-color:#f6f6f6;
+}
+A {
+	text-decoration: none;
+	color: #9A1236; /* color: #708090; */
+}
+A:hover {
+	text-decoration: underline;
+	color: #ff6633; /* color: #cc0000; */
+}
+.navi {
+	padding:4px;
+	background-color:#f5f5f5; /* #E1F2FB */
+}
+
+/************************************************/
+#sectionHeader {
+	color:#9A1236;
+	padding:3px;
+	margin-bottom:12px;
+	font-size:12px;
+	font-weight:bold;
+}
+.header{	
+	background:url(../img/bg.png) repeat-x;
+	padding:0px 0px 0px 0px;
+}
+.footer{
+	font-family:tahoma;
+	font-size:11px;
+	background:url(../img/bg.png) repeat-x;
+	color:#900;
+	padding-top:1px;
+	padding-bottom:1px;
+}
+.menubar{
+	background: url(../img/skins/mainmenubg.gif) repeat-x;
+}
+#imgaction{
+	margin-left:10px;
+	cursor:hand;
+}
+.home{
+	color:#9A1236;
+	padding-left:3px;
+	padding-right:20px;
+	font-size:12px;
+	/*font-weight:bold;*/
+}

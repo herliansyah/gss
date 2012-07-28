@@ -1,0 +1,32 @@
+hasil dari uji coba IPL versi 12 Juni 2012 oleh client:
+
+1. data transaksi >pembayaran IPL > tambah
+bisa dibayar berulang, jadi masih bisa dipilih lagi saat dipilih bulan
+yang sudah pernah dibayar
+contoh: A telah lunas bayar jan2012-mar2012
+saat invoice berikutnya akan dipilih feb2012-jun2012 : tetap bisa
+padahal feb2012 & mar2012 telah lunas dari invoice sebelumnya => OK
+
+2. data transaksi >pembayaran IPL > edit salah satu invoice
+tidak bisa melakukan perubahan bulan yang dibayarkan?
+mengapa tanggal bayar default di bagian atas 01-01-1970 bukan tanggal
+transaksi invoice? => gunakan delete yg salah, insert yg baru
+
+3. akibat dari pembayaran yang bisa dilakukan untuk bulan yang sama
+laporannya juga menjadi salah karena ada bulan yang ganda padahal hal
+tersebut tidak boleh terjadi => OK
+
+4. pada pengguna kasir
+tidak bisa menambahkan pembayaran jika ada yang bayar
+
+5. pada pengguna spervisor
+tidak bisa mengedit pembayaran
+
+6. pada pengguna admin
+belum ada menu untuk print log kegiatan berdasarkan user
+
+7. pada laporan saat dicetak
+bagian total 3 digit hilang akibat .000
+pada saat view saja muncul
+jika memang tipe data character perlu disesuaikan agar hal ini tidak terjadi
+=> terjadi mungkin karena belum menggunakan settingan Indonesia di komputernya/ masih US
