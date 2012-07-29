@@ -1,12 +1,6 @@
 <?php
 defined("_VALID_REQUEST") or die("Invalid Request");
 
-session_start();
-if(!isset($_SESSION['admin'])){
-header("Location:admin.php");
-}
-
-
 $file = "backup/backup.php";
 $judul = "Backup Semua Data";
 

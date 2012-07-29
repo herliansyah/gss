@@ -63,5 +63,19 @@ include_once $config['inc_dir'].'/header.php';
 ?>
 <?php
 	include_once $config['inc_dir'].'/footer.php';
+
+	//=============== UPDATE MODULE ============================================================================//
+	//untuk update DB
+	$sqlcek = "select count(menu_name) as jum from tmenu where menu_name = 'Laporan Log'";
+	$rescek = mysql_query($sqlcek);
+	$rowcek = mysql_fetch_array($rescek);
+	$jum 	= $rowcek['jum'];
+
+	if($jum < 1){
+		//insert new menu
+		$sqln = "INSERT INTO tmenu (menu_name,parent_id,menu_code,url,ordering) VALUES ('Laporan Log','163','179','?mod=lap_log&cmd=index','6')";
+		$resn = mysql_query($sqln);
+	}
+	//=================END UPDATE MODULE =======================================================================//
 ?>
 <?php $oDb->Close();  ?>

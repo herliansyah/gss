@@ -17,13 +17,13 @@ laporannya juga menjadi salah karena ada bulan yang ganda padahal hal
 tersebut tidak boleh terjadi => OK
 
 4. pada pengguna kasir
-tidak bisa menambahkan pembayaran jika ada yang bayar
+tidak bisa menambahkan pembayaran jika ada yang bayar => OK
 
 5. pada pengguna spervisor
-tidak bisa mengedit pembayaran
+tidak bisa mengedit pembayaran => OK
 
 6. pada pengguna admin
-belum ada menu untuk print log kegiatan berdasarkan user
+belum ada menu untuk print log kegiatan berdasarkan user => OK
 
 7. pada laporan saat dicetak
 bagian total 3 digit hilang akibat .000
