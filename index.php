@@ -29,8 +29,13 @@ include_once $config['inc_dir'].'/header.php';
 			   ( $mod=="akses" && $cmd=="penundaan") ||
 			   ( $mod=="akses" && $cmd=="rekap") ||
 			   ( $mod=="grafik" && $cmd=="home");
+
+		//penanganan sementara
+		$sqlm = "select * from tmenu where url like '%$mod%'";
+		$resm = mysql_query($sqlm);
+		$rowm = mysql_fetch_array($resm);	   
 			   
-		if(!$exclude && $session->isAuthorized($mod)){
+		if(!$exclude && $session->isAuthorized($rowm['menu_code'])){
 			$incfile = $mod . "/" . $cmd . ".php" ;
 			if(file_exists($incfile)){
 				define('_VALID_REQUEST',true);
