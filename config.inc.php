@@ -6,10 +6,10 @@ $config['site_title']  = 'GSS - Aplikasi Warga Lingkungan';
 $config['site_footer'] = "Copyright ". date('Y') ." - All Right Reserved";
 $config['secret_key']  = 'gss';
 
-$config['dbhost'] = 'localhost';
-$config['dbuser'] = 'root';
-$config['dbpass'] = '';
-$config['dbname'] = 'db_gss';
+$config['dbhost'] = getenv('MYSQL_DB_HOST');
+$config['dbuser'] = getenv('MYSQL_USERNAME');
+$config['dbpass'] = getenv('MYSQL_PASSWORD');
+$config['dbname'] = getenv('MYSQL_DB_NAME');
 $config['dbtype'] = 'mysql';
 
 $config['base_dir'] = str_replace('\\','/',dirname(__FILE__));
