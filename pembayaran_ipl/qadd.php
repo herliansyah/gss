@@ -3,7 +3,7 @@ require_once '../config.inc.php';
 require_once $config['lib_dir'].'/class.session.php';
 include_once $config['lib_dir'].'/common.php';
 
-$session->requireLogin('Penjualan');
+//$session->requireLogin('Penjualan');
 
 $tgl = calToMysqlDate($_POST['txtTgl']);
 
