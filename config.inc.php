@@ -16,7 +16,7 @@ $config['base_dir'] = str_replace('\\','/',dirname(__FILE__));
 $config['lib_dir']  = $config['base_dir'].'/lib';
 $config['inc_dir']  = $config['base_dir'].'/inc';
 $config['img_dir']  = $config['base_dir'].'/img';
-$config['base_url'] = "http://".$_SERVER['SERVER_NAME']."/gss";
+$config['base_url'] = "http://".$_SERVER['SERVER_NAME'];
 $config['img_url']  = $config['base_url'].'/img';
 
 $config['exclude_menu_check'] = array();
