@@ -105,6 +105,7 @@ function checkForm(f) {
             </tr>
             <?
 				$Bill = $row['invoice_no'];
+				$warga = $row['id_warga'];
 				$s = "select * from tbl_bayar_detail where invoice_no = '$Bill'";
 				$r = mysql_query($s);
 				while($rw = mysql_fetch_array($r)){
@@ -145,6 +146,7 @@ function checkForm(f) {
 				<td>:</td>
 				<td><?=dropDownMonth("selBulan","","","")?><?=dropDownTahun("selTahun","5","","1")?></td> <td><?=dropDownMonth("selBulan2","","","")?><?=dropDownTahun("selTahun2","5","","1")?></td>
             <td>
+            	<input type="hidden" name="warga" value="<?=$warga?>" />   	
             	<input type="hidden" name="hBill" value="<?=$Bill?>" />   	
                 <input class="submit" type="submit" value="Insert"/>
         	</td>

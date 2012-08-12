@@ -27,6 +27,9 @@ $rs = $oDb->Execute($sql,
 									$id_tarif 
                                 )
                         );
+$sqlx = "update tbl_bayar_detail set id_warga = ' $_POST[txtWarga]' where invoice_no = '$_POST[txtinvoice_no]'";
+$resx = mysql_query($sqlx);
+
 // hapus bulan pembayaran yang telah dibayar di invoice lain
 $sqld = "SELECT d.*,h.id_warga  FROM tbl_bayar_detail d INNER JOIN tbl_pembayaran_ipl h ON d.invoice_no = h.invoice_no WHERE d.invoice_no = '$_POST[txtinvoice_no]' ";
 $resd = mysql_query($sqld);
@@ -41,7 +44,14 @@ while($rowd = mysql_fetch_array($resd)){
         $sqld3 = "delete from tbl_bayar_detail where invoice_no = '$_POST[txtinvoice_no]' AND bulan = '$rowd[bulan]' AND tahun = '$rowd[tahun]' ";
         $resd3 = mysql_query($sqld3);
 
+        ?>
+            <script type="text/javascript">
+                 alert("Bulan <?=$rowd[bulan]?> Tahun <?=$rowd[tahun]?> gagal , karena sudah ada pembayaran");
+            </script>
+        <?
 
+        $sqld4 = "delete from tbl_pembayaran_ipl where invoice_no not in (select invoice_no from tbl_bayar_detail ) ";
+        $resd4 = mysql_query($sqld4);
     }
 
 }
@@ -49,5 +59,5 @@ while($rowd = mysql_fetch_array($resd)){
 //log
 $logger->logMsg($_SESSION[_SESSION_PREFIX.'user_name'], sprintf("User '%s' Menambah Data Pembayaran dengan No Invoice '%s'.", $_SESSION[_SESSION_PREFIX.'user_name'],$_POST['txtinvoice_no']));
 
-showSuccessJs('Data berhasil disimpan','../?mod=pembayaran_ipl&cmd=index');
+showSuccessJs('Eksekusi Selesai','../?mod=pembayaran_ipl&cmd=index');
 ?>

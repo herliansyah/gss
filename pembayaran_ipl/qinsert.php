@@ -24,7 +24,11 @@ foreach($data as $key){
 	$bulan = substr($key, 3,2);
 
 	//cek bulan telah di pakai apa blm
-	$sqlc = "select count(*) as jum from tbl_bayar_detail where invoice_no  = '$_POST[hBill]' and bulan = '$bulan' and tahun = '$tahun'";
+	if($_POST[warga] <> ''){
+		$sqlc = "select count(*) as jum from tbl_bayar_detail where id_warga  = '$_POST[warga]' and bulan = '$bulan' and tahun = '$tahun'";
+	}else{
+		$sqlc = "select count(*) as jum from tbl_bayar_detail where invoice_no  = '$_POST[hBill]' and bulan = '$bulan' and tahun = '$tahun'";
+	}
 	$resc = mysql_query($sqlc);
 	$rowc = mysql_fetch_array($resc);
 	$jumc = $rowc['jum'];
@@ -35,18 +39,26 @@ foreach($data as $key){
 				INSERT INTO tbl_bayar_detail (
 						invoice_no,
 						bulan,
+						id_warga,
 						tahun
 					) VALUES (
-							'%s',%d,%d
+							'%s',%d,%d,%d
 					)",
 						$_POST['hBill'],
 						$bulan,
+						$_POST['warga'],
 						$tahun
 				);
 
 				
 		$res = mysql_query($query) or die("$query");
 
+	}else{
+		?>
+		<script type="text/javascript">
+			alert("Bulan <?=$bulan?> Tahun <?=$tahun?> sudah ada pembayaran");
+		</script>
+		<?
 	}
 }	
 	//log
@@ -54,7 +66,6 @@ foreach($data as $key){
 	//@mssql_close($conn);
 	
 	//showSuccessJs("Sukses di eksekusi.", '../?mod=pembayaran_ipl&cmd=edit&id='.$_POST['hBill']);
-	
 	?>
 	<script language="javascript">
 	history.back();
